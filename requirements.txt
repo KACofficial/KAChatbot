@@ -1,0 +1,6 @@
+Flask==3.0.3
+Flask_SocketIO==5.3.7
+python-dotenv==1.0.1
+Requests==2.32.3
+spotipy==2.24.0
+twitchio==2.10.0
