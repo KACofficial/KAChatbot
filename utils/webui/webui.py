@@ -298,6 +298,7 @@ def dashboard(page):
         if channel == 'all':
             chatlog_data = chatlog.read_chatlog(date=date)
         else:
+            # file deepcode ignore PT: Not a valid issue, sanitized in chatlog.read_chatlog()
             chatlog_data = chatlog.read_chatlog(channel=channel, date=date)
         
         # socketio.emit("update_chatlog", chatlog_data)
