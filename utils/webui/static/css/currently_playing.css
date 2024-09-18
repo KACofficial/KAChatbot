@@ -1,0 +1,74 @@
+/* General body styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent; /* Transparent background for OBS browser source */
+  font-family: Arial, sans-serif; /* Use a clean, readable font */
+  color: #fff; /* Default text color for better readability on dark backgrounds */
+}
+
+/* Container for song and album cover */
+#song_div {
+  position: relative; /* Ensure children are positioned relative to this container */
+  display: flex;
+  align-items: center; /* Align items in the center vertically */
+  padding: 20px; /* Add padding around the container */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+  border-radius: 15px; /* Rounded corners for the container */
+}
+
+/* Styling for the album cover section */
+#album_cover_div {
+  margin-right: 20px; /* Space between album cover and song info */
+}
+
+#album_cover {
+  width: 200px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  border-radius: 10px; /* Rounded corners */
+  border: 3px solid #fff; /* White border around album cover for visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Styling for song information section */
+#song_info_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center align content vertically */
+}
+
+#song_title {
+  font-size: 42px; /* Font size for the song title */
+  font-weight: bold; /* Bold font for emphasis */
+  color: #fff; /* White text color */
+  margin-bottom: 10px; /* Space between song title and artist */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+}
+
+#artists {
+  font-size: 28px; /* Font size for artists */
+  color: #ddd; /* Slightly lighter text color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+}
+
+/* Styling for Now Playing text */
+#now_paying_text {
+  position: absolute; /* Position it absolutely within the #song_div container */
+  top: 0; /* Align it to the top of the container */
+  left: 0; /* Align it to the left of the container */
+  width: 100%; /* Ensure it stretches across the width of the container */
+  text-align: center; /* Center align the text */
+  font-size: 32px;
+  color: #fff;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Semi-transparent background for better visibility */
+  padding: 10px; /* Padding around the text */
+  border-radius: 15px 15px 0 0; /* Rounded corners at the top */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  z-index: 10; /* Ensure it is above the other content */
+}

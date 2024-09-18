@@ -1,0 +1,23 @@
+<!-- templates/dashboard.html -->
+{% extends "dashboard-topbar.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard-main.css') }}">
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard-main.js') }}"></script>
+{% endblock %}
+
+{% block title %}KAChatbot | Dashboard{% endblock %}
+
+
+
+{% block content %}
+<div class="lurking-div" id="lurking-div">
+    <h1 class="title">Lurking</h1>
+    <ul class="lurking-list">
+        {% for lurker in lurkers %}
+            <li>{{ lurker }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

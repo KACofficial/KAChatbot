@@ -1,0 +1,40 @@
+{% extends "dashboard-topbar.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard-chatlog.css') }}">
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard-chatlog.js') }}"></script>
+
+{% endblock %}
+
+{% block title %}KAChatbot | Chatlog{% endblock %}
+
+{% block content %}
+<div class="chatlog-div" id="chatlog-div">
+  <ul id="chatlog-list">
+    <!-- {% if chatlog %}
+      {% for channel, data in chatlog.items() %}
+        <div class="chat-channel">
+          <h2>{{ channel }}</h2>
+          {% if data and data.get('chatlog') %}
+            {% for message in data.chatlog %}
+              <div class="chat-message">
+                <span class="timestamp">{{ message.timestamp }}</span>
+                {% for badge, value in message.badges.items() %}
+                  <span class="badge {{ badge }}">{{ badge }}</span>
+                {% endfor %}
+                <span class="username">{{ message.username }}: </span>
+                <span class="message">{{ message.message }}</span>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p>No messages available for this channel.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No chat logs available for the selected date.</p>
+    {% endif %} -->
+  </ul>
+</div>
+{% endblock %}

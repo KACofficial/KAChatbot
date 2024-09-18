@@ -1,0 +1,50 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+#aquarium {
+  image-rendering: pixelated;
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background-size: cover;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 11px;
+  color: whitesmoke;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.fish-image {
+  padding-top: 0px;
+  margin-top: 0px;
+  height: 75px;
+  width: auto;
+  image-rendering: pixelated;
+  position: relative;
+  z-index: 1;
+}
+
+.fish {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: left 3s ease, top 3s ease; /* The easing in and out */
+}
+
+.fish-name {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  position: relative; /* Keep relative positioning within the .fish container */
+  z-index: 2; /* Ensure it is above the fish image */
+}

@@ -1,0 +1,50 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1E90FF;
+    color: white;
+    padding: 5px 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the top-bar stays above other content */
+    height: 24px; /* Adjust to match the height of the top bar */
+}
+
+.top-bar .title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px; /* Adjust to match the height of the top bar */
+}
+
+.top-bar .separator {
+    height: 24px; /* Match the height of the top bar */
+    border-left: 2px solid white; /* Line color and width */
+    margin-left: 10px; /* Reduce space around the line */
+    margin-right: 5px; /* Reduce space around the line */
+}
+
+.top-bar .links {
+    display: flex;
+    align-items: center; /* Vertically centers the links with the separator */
+}
+
+.top-bar .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px; /* Space between links */
+}
+
+.top-bar .links a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    margin-top: 24px; /* Adjust to match the height of the top bar */
+}

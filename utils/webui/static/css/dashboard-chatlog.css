@@ -1,0 +1,42 @@
+.timestamp {
+    font-size: 12px;
+    color: #999;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+
+
+/******************
+Badge Styles
+*******************/
+.badge.vip {
+    background-color: #FFD700;
+    color: black;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.badge.broadcaster {
+    background-color: #c0392b;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.badge {
+    background-color: #e0e0e0;
+    color: black;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 5px;
+}

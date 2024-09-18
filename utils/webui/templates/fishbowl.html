@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/fishbowl.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/fishbowl.js') }}"></script>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <title>Fishbowl</title>
+  </head>
+  <body>
+    <div
+      id="aquarium"
+      style="background-image: url('{{ url_for('static', filename='assets/fishbowl-bg.jpg') }}');"
+    >
+      {% if fishlist %} {% for fish in fishlist %}
+      <div class="fish">
+        <p id="fish_name" class="fish-name">{{ fish['name'] }}</p>
+        <img
+          src="{{ url_for('static', filename='assets/' + fish['image'] + '.png') }}"
+          class="fish-image"
+          id="fish-image"
+        />
+      </div>
+      {% endfor %} {% endif %}
+    </div>
+  </body>
+</html>
