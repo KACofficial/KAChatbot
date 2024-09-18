@@ -10,6 +10,4 @@ chatlogs/
 *.json
 
 # pycache stuff
-*.pyc
-*.pyo
-__pycache__/
+**/__pycache__/
