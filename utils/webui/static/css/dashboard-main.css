@@ -1,3 +1,9 @@
+.dashboard-lists {
+    display: flex;
+    /* margin-top: 60px; Provides space below the fixed top-bar */
+    justify-content: start;
+}
+
 .lurking-div {
     margin-left: 10px;
     border: 1px solid #007489;
@@ -19,4 +25,40 @@
     margin: 0;
     font-size: 18px;
     line-height: 40px;
+}
+
+.songs-div {
+    margin-left: 10px;
+    border: 1px solid #007489;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    width: 300px;
+    height: auto;
+    margin-top: 60px; /* Provides space below the fixed top-bar */
+    padding: 10px; /* Adds padding inside the div */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.songs-div .song-list {
+    border: 1px solid darkblue;
+    border-radius: 5px;
+}
+
+.songs-div .title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+svg.delete-btn {
+    fill: red !important;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    margin-left: 0px;
+    vertical-align: middle;
+}
+
+svg.delete-btn:hover {
+    fill: darkred !important;
 }

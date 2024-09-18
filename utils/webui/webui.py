@@ -56,6 +56,7 @@ global_config = load_config()
 fishbowl = {"fishlist": []}
 lurkers = []
 chatlog = Chatlog()
+song_requests = []
 
 @app.route("/")
 def index():
@@ -305,10 +306,16 @@ def dashboard(page):
         
         return render_template("dashboard-chatlog.html", chatlog=chatlog_data)
     else:
-        return render_template("dashboard-main.html", lurkers=lurkers)
+        return render_template("dashboard-main.html", lurkers=lurkers, songs=song_requests)
 
-
-
+@app.route("/request-song", methods=["POST"])
+def request_song():
+    song = request.form.get("song")
+    if song:
+        song_requests.append(song)
+        socketio.emit("add_song_request", song)
+        return jsonify({"status": "success", "message": "Song requested successfully"}), 200
+    return jsonify({"status": "error", "message": "Invalid song"}), 400
 
 @socketio.on("connect")
 def handle_connect():
@@ -328,6 +335,33 @@ def handle_request_chatlog(data):
 
     # print(f"Emitting chatlog data: {chatlog_data}")
     emit("update_chatlog", chatlog_data)
+
+@socketio.on("remove_item")
+def handle_item_removal(data):
+    list_type = data.get("listType")
+    item_id = data.get("itemId")
+    
+    print(f"Received remove_item event: listType={list_type}, itemId={item_id}")
+
+    if list_type == "songs":
+        item = next((song for song in song_requests if f"song-{song}" == item_id), None)
+        if item:
+            print(f"Removing song: {item}")
+            song_requests.remove(item)
+            socketio.emit("update_song_requests", song_requests)
+        else:
+            print(f"Song with id {item_id} not found")
+    elif list_type == "lurkers":
+        item = next((lurker for lurker in lurkers if f"lurker-{lurker}" == item_id), None)
+        if item:
+            print(f"Removing lurker: {item}")
+            lurkers.remove(item)
+            socketio.emit("update_lurkers", lurkers)
+        else:
+            print(f"Lurker with id {item_id} not found")
+    else:
+        print(f"Unknown listType: {list_type}")
+
 
 def run_webui():
     app.run(debug=False, use_reloader=False)
