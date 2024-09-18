@@ -1,0 +1,15 @@
+
+# any hidden files
+.*/
+.cache
+
+# my personal chatlog
+chatlogs/
+
+# any json files, like config or test stuff
+*.json
+
+# pycache stuff
+*.pyc
+*.pyo
+__pycache__/
